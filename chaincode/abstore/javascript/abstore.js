@@ -47,10 +47,9 @@ const ABstore = class {
     let A = args[0];
     let Aval = args[1];
 
-    if (typeof parseInt(Aval) !== 'number' || typeof parseInt(Bval) !== 'number') {
+    if (typeof parseInt(Aval) !== 'number') {
       return shim.error('Expecting integer value for asset holding');
     }
-
     await stub.putState(A, Buffer.from(Aval));
   }
 
